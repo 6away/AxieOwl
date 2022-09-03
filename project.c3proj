@@ -317,6 +317,8 @@
 		"items": [
 			"LEVEL_1",
 			"LEVEL_2",
+			"LEVEL_3",
+			"LEVEL_4",
 			"META",
 			"MENU_NEXT",
 			"MENU_RETRY",
