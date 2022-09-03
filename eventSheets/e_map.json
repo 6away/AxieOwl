@@ -229,6 +229,16 @@
 							"parameters": {
 								"object": "obj_level_1"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "obj_level_1",
+							"sid": 868107813949392,
+							"parameters": {
+								"comparison": 1,
+								"number": "0"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
@@ -237,7 +247,7 @@
 							"objectClass": "System",
 							"sid": 617944628482134,
 							"parameters": {
-								"variable": "level_playing",
+								"variable": "levelPlaying",
 								"value": "1"
 							}
 						},
@@ -258,6 +268,15 @@
 							"parameters": {
 								"object": "obj_level_2"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "obj_level_2",
+							"sid": 764941742167866,
+							"parameters": {
+								"comparison": 1,
+								"number": "0"
+							}
 						}
 					],
 					"actions": [
@@ -266,7 +285,7 @@
 							"objectClass": "System",
 							"sid": 512270697647000,
 							"parameters": {
-								"variable": "level_playing",
+								"variable": "levelPlaying",
 								"value": "2"
 							}
 						},
@@ -287,6 +306,15 @@
 							"parameters": {
 								"object": "obj_level_3"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "obj_level_3",
+							"sid": 214040202359436,
+							"parameters": {
+								"comparison": 1,
+								"number": "0"
+							}
 						}
 					],
 					"actions": [
@@ -295,7 +323,7 @@
 							"objectClass": "System",
 							"sid": 652927222417171,
 							"parameters": {
-								"variable": "level_playing",
+								"variable": "levelPlaying",
 								"value": "3"
 							}
 						},
@@ -316,6 +344,15 @@
 							"parameters": {
 								"object": "obj_level_4"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "obj_level_4",
+							"sid": 909504366205620,
+							"parameters": {
+								"comparison": 1,
+								"number": "0"
+							}
 						}
 					],
 					"actions": [
@@ -324,7 +361,7 @@
 							"objectClass": "System",
 							"sid": 285297845464256,
 							"parameters": {
-								"variable": "level_playing",
+								"variable": "levelPlaying",
 								"value": "4"
 							}
 						},
@@ -345,6 +382,15 @@
 							"parameters": {
 								"object": "obj_level_5"
 							}
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "obj_level_5",
+							"sid": 951448258636422,
+							"parameters": {
+								"comparison": 1,
+								"number": "0"
+							}
 						}
 					],
 					"actions": [
@@ -353,7 +399,7 @@
 							"objectClass": "System",
 							"sid": 796712097854567,
 							"parameters": {
-								"variable": "level_playing",
+								"variable": "levelPlaying",
 								"value": "5"
 							}
 						},
@@ -382,7 +428,7 @@
 							"objectClass": "System",
 							"sid": 325277084051171,
 							"parameters": {
-								"variable": "levelpassed",
+								"variable": "levelPassed",
 								"comparison": 0,
 								"value": "1"
 							}
@@ -420,7 +466,7 @@
 											"objectClass": "System",
 											"sid": 275221869450259,
 											"parameters": {
-												"variable": "level_playing",
+												"variable": "levelPlaying",
 												"comparison": 0,
 												"value": "1"
 											}
@@ -432,7 +478,7 @@
 											"objectClass": "ar_crownsEarned",
 											"sid": 627818514727800,
 											"parameters": {
-												"x": "level_playing",
+												"x": "levelPlaying",
 												"value": "crowns"
 											}
 										},
@@ -441,7 +487,7 @@
 											"objectClass": "obj_level_1",
 											"sid": 831887546067308,
 											"parameters": {
-												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+												"frame-number": "1+ar_crownsEarned.At(levelPlaying)"
 											}
 										}
 									],
@@ -457,7 +503,7 @@
 													"parameters": {
 														"variable": "levelUnlock",
 														"comparison": 3,
-														"value": "level_playing"
+														"value": "levelPlaying"
 													}
 												}
 											],
@@ -503,7 +549,7 @@
 											"objectClass": "System",
 											"sid": 433392400302112,
 											"parameters": {
-												"variable": "level_playing",
+												"variable": "levelPlaying",
 												"comparison": 0,
 												"value": "2"
 											}
@@ -515,7 +561,7 @@
 											"objectClass": "ar_crownsEarned",
 											"sid": 835885588974160,
 											"parameters": {
-												"x": "level_playing",
+												"x": "levelPlaying",
 												"value": "crowns"
 											}
 										},
@@ -524,7 +570,7 @@
 											"objectClass": "obj_level_1",
 											"sid": 781937317485774,
 											"parameters": {
-												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+												"frame-number": "1+ar_crownsEarned.At(levelPlaying)"
 											}
 										}
 									],
@@ -540,7 +586,7 @@
 													"parameters": {
 														"variable": "levelUnlock",
 														"comparison": 3,
-														"value": "level_playing"
+														"value": "levelPlaying"
 													}
 												}
 											],
@@ -586,7 +632,7 @@
 											"objectClass": "System",
 											"sid": 618835833818961,
 											"parameters": {
-												"variable": "level_playing",
+												"variable": "levelPlaying",
 												"comparison": 0,
 												"value": "3"
 											}
@@ -598,7 +644,7 @@
 											"objectClass": "ar_crownsEarned",
 											"sid": 529835260548767,
 											"parameters": {
-												"x": "level_playing",
+												"x": "levelPlaying",
 												"value": "crowns"
 											}
 										},
@@ -607,7 +653,7 @@
 											"objectClass": "obj_level_1",
 											"sid": 322718664619909,
 											"parameters": {
-												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+												"frame-number": "1+ar_crownsEarned.At(levelPlaying)"
 											}
 										}
 									],
@@ -623,7 +669,7 @@
 													"parameters": {
 														"variable": "levelUnlock",
 														"comparison": 3,
-														"value": "level_playing"
+														"value": "levelPlaying"
 													}
 												}
 											],
@@ -669,7 +715,7 @@
 											"objectClass": "System",
 											"sid": 696849058792101,
 											"parameters": {
-												"variable": "level_playing",
+												"variable": "levelPlaying",
 												"comparison": 0,
 												"value": "4"
 											}
@@ -681,7 +727,7 @@
 											"objectClass": "ar_crownsEarned",
 											"sid": 427875147169630,
 											"parameters": {
-												"x": "level_playing",
+												"x": "levelPlaying",
 												"value": "crowns"
 											}
 										},
@@ -690,7 +736,7 @@
 											"objectClass": "obj_level_1",
 											"sid": 209824195575882,
 											"parameters": {
-												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+												"frame-number": "1+ar_crownsEarned.At(levelPlaying)"
 											}
 										}
 									],
@@ -706,7 +752,7 @@
 													"parameters": {
 														"variable": "levelUnlock",
 														"comparison": 3,
-														"value": "level_playing"
+														"value": "levelPlaying"
 													}
 												}
 											],
@@ -752,7 +798,7 @@
 											"objectClass": "System",
 											"sid": 715629496605615,
 											"parameters": {
-												"variable": "level_playing",
+												"variable": "levelPlaying",
 												"comparison": 0,
 												"value": "5"
 											}
@@ -764,7 +810,7 @@
 											"objectClass": "ar_crownsEarned",
 											"sid": 352068771042583,
 											"parameters": {
-												"x": "level_playing",
+												"x": "levelPlaying",
 												"value": "crowns"
 											}
 										},
@@ -773,7 +819,7 @@
 											"objectClass": "obj_level_1",
 											"sid": 633999907705472,
 											"parameters": {
-												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+												"frame-number": "1+ar_crownsEarned.At(levelPlaying)"
 											}
 										}
 									],
@@ -789,7 +835,7 @@
 													"parameters": {
 														"variable": "levelUnlock",
 														"comparison": 3,
-														"value": "level_playing"
+														"value": "levelPlaying"
 													}
 												}
 											],
@@ -815,6 +861,177 @@
 				}
 			],
 			"sid": 323969077971102
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL UNLOCKED",
+			"description": "This is where you set the animation frame numbers of the corresponding level",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "unlock Level 1",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "obj_level_1",
+									"sid": 472128579304295,
+									"parameters": {
+										"instance-variable": "mapLevel",
+										"comparison": 4,
+										"value": "levelUnlock"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "obj_level_1",
+									"sid": 750915632747364,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 608821160178169,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "obj_level_1",
+									"sid": 865583109296867,
+									"parameters": {
+										"instance-variable": "mapLevel",
+										"comparison": 3,
+										"value": "levelUnlock"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "obj_level_1",
+									"sid": 597551937960118,
+									"parameters": {
+										"comparison": 3,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "ar_crownsEarned",
+									"sid": 561874056963483,
+									"parameters": {
+										"x": "levelPlaying+1",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "obj_level_1",
+									"sid": 258979984625854,
+									"parameters": {
+										"frame-number": "1+ar_crownsEarned.At(1)"
+									}
+								}
+							],
+							"sid": 570635722926569
+						}
+					],
+					"sid": 666052095429923
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "unlock Level 2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "obj_level_2",
+									"sid": 430673295245733,
+									"parameters": {
+										"instance-variable": "mapLevel",
+										"comparison": 3,
+										"value": "levelUnlock"
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "obj_level_2",
+									"sid": 541027639162105,
+									"parameters": {
+										"comparison": 3,
+										"number": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-x",
+									"objectClass": "ar_crownsEarned",
+									"sid": 415756691548015,
+									"parameters": {
+										"x": "levelPlaying+1",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "obj_level_2",
+									"sid": 676544969226746,
+									"parameters": {
+										"frame-number": "1+ar_crownsEarned.At(2)"
+									}
+								}
+							],
+							"sid": 564033540432402
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "obj_level_2",
+									"sid": 152826915493384,
+									"parameters": {
+										"instance-variable": "mapLevel",
+										"comparison": 4,
+										"value": "levelUnlock"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "obj_level_2",
+									"sid": 303988272294702,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 749490872416320
+						}
+					],
+					"sid": 271115524959131
+				}
+			],
+			"sid": 724036388014431
 		}
 	],
 	"sid": 332886030828895

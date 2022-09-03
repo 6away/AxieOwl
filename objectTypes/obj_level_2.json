@@ -3,7 +3,14 @@
 	"plugin-id": "Sprite",
 	"sid": 901669385419455,
 	"isGlobal": false,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "mapLevel",
+			"type": "number",
+			"desc": "",
+			"sid": 822777377931103
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {

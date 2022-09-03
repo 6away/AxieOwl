@@ -46,7 +46,7 @@
 							"objectClass": "System",
 							"sid": 840326836402907,
 							"parameters": {
-								"variable": "coinstobeat",
+								"variable": "coinsToBeat",
 								"value": "coinGoal"
 							}
 						},
@@ -55,7 +55,7 @@
 							"objectClass": "System",
 							"sid": 204550833441508,
 							"parameters": {
-								"variable": "timetobeat",
+								"variable": "timeToBeat",
 								"value": "timeGoal"
 							}
 						},
@@ -978,7 +978,7 @@
 							"objectClass": "System",
 							"sid": 917102905931851,
 							"parameters": {
-								"layout": "\"LEVEL_\"&level_playing"
+								"layout": "\"LEVEL_\"&levelPlaying"
 							}
 						}
 					],

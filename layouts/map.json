@@ -131,7 +131,9 @@
 						"live-preview": false
 					},
 					"uid": 181,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"mapLevel": 1
+					},
 					"behaviors": {},
 					"world": {
 						"x": 48,
@@ -160,7 +162,9 @@
 						"live-preview": false
 					},
 					"uid": 182,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"mapLevel": 2
+					},
 					"behaviors": {},
 					"world": {
 						"x": 259,
@@ -189,7 +193,9 @@
 						"live-preview": false
 					},
 					"uid": 183,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"mapLevel": 3
+					},
 					"behaviors": {},
 					"world": {
 						"x": 197,
@@ -218,7 +224,9 @@
 						"live-preview": false
 					},
 					"uid": 184,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"mapLevel": 4
+					},
 					"behaviors": {},
 					"world": {
 						"x": 59,
@@ -247,7 +255,9 @@
 						"live-preview": false
 					},
 					"uid": 185,
-					"instanceVariables": {},
+					"instanceVariables": {
+						"maplevel": 5
+					},
 					"behaviors": {},
 					"world": {
 						"x": 270,

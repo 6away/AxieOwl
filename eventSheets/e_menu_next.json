@@ -16,7 +16,7 @@
 					"objectClass": "txt_total_slp",
 					"sid": 364817403698159,
 					"parameters": {
-						"text": "\"SLP: \" & coinsCollected & \"/\" & slpCoinsInLevel"
+						"text": "\"SLP: \" & coinsCollected & \"/\" & coinsinLevel"
 					}
 				},
 				{

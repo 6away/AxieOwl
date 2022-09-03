@@ -135,7 +135,7 @@
 							"objectClass": "System",
 							"sid": 692490881535667,
 							"parameters": {
-								"variable": "levelpassed",
+								"variable": "levelPassed",
 								"value": "1"
 							}
 						},

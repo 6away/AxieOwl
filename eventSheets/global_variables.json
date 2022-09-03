@@ -27,7 +27,31 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "// Achievements Time"
+			"text": "// Achievements"
+		},
+		{
+			"eventType": "variable",
+			"name": "levelPassed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 495054947708769
+		},
+		{
+			"eventType": "variable",
+			"name": "crowns",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 255019738864987
+		},
+		{
+			"eventType": "comment",
+			"text": "// Achievements - time"
 		},
 		{
 			"eventType": "variable",
@@ -37,21 +61,11 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 696607752326527
+			"sid": 715521860789215
 		},
 		{
 			"eventType": "variable",
-			"name": "levelpassed",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 315289372832022
-		},
-		{
-			"eventType": "variable",
-			"name": "timetobeat",
+			"name": "timeToBeat",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -65,43 +79,33 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "coinstobeat",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 425713915115852
-		},
-		{
-			"eventType": "variable",
-			"name": "crowns",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 165517371166548
-		},
-		{
-			"eventType": "variable",
-			"name": "slpCoinsInLevel",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 829220482073143
-		},
-		{
-			"eventType": "variable",
 			"name": "coinsCollected",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 573027326157886
+			"sid": 624107118578346
+		},
+		{
+			"eventType": "variable",
+			"name": "coinsInLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "SLP collected within level",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 763467357582424
+		},
+		{
+			"eventType": "variable",
+			"name": "coinsToBeat",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 425713915115852
 		},
 		{
 			"eventType": "comment",
@@ -173,11 +177,11 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "//levels"
+			"text": "//Levels"
 		},
 		{
 			"eventType": "variable",
-			"name": "level_playing",
+			"name": "levelPlaying",
 			"type": "number",
 			"initialValue": "1",
 			"comment": "The number value is the name of the current level the player is playing",

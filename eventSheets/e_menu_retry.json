@@ -101,7 +101,7 @@
 					"objectClass": "System",
 					"sid": 634392853079362,
 					"parameters": {
-						"variable": "slpCoinsInLevel",
+						"variable": "coinsInLevel",
 						"value": "0"
 					}
 				},
