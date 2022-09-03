@@ -1,0 +1,249 @@
+{
+	"name": "e_objects",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SPRING BOARD",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "olek",
+							"sid": 741888641846244,
+							"parameters": {
+								"object": "obj_spring"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-vector-y",
+							"objectClass": "olek",
+							"sid": 729276791148349,
+							"behaviorType": "Platform",
+							"parameters": {
+								"vector-y": "-900"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 116735965426095,
+							"parameters": {
+								"audio-file": "springFX",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 216027170254600
+				}
+			],
+			"sid": 141219559152759
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "DIAMOND",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "olek",
+							"sid": 964554174919289,
+							"parameters": {
+								"object": "obj_shard"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 437826954980901,
+							"parameters": {
+								"audio-file": "success chime 6",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "obj_shard",
+							"sid": 894936369884928,
+							"parameters": {
+								"object": "particle_shard",
+								"layer": "\"objects\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "obj_shard",
+							"sid": 534156572276673
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 706684161436701,
+							"parameters": {
+								"group-name": "\"PLAYER CONTROLS\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 201947847506203,
+							"parameters": {
+								"group-name": "\"PLAYER ANIMATION\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "olek",
+							"sid": 141965208324344,
+							"parameters": {
+								"animation": "\"ani_idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 154476203314537,
+							"parameters": {
+								"variable": "crowns",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 692490881535667,
+							"parameters": {
+								"variable": "levelpassed",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 579588873808995,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 431229180648553,
+							"parameters": {
+								"layout": "MENU_NEXT"
+							}
+						}
+					],
+					"sid": 691221816608270
+				}
+			],
+			"sid": 753558839733442
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "COIN",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "olek",
+							"sid": 339704381086875,
+							"parameters": {
+								"object": "obj_slp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "spawn-another-object",
+							"objectClass": "obj_slp",
+							"sid": 140137974233514,
+							"parameters": {
+								"object": "slp_sparkle",
+								"layer": "\"objects\"",
+								"image-point": "0",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 102014011139449,
+							"parameters": {
+								"variable": "coinsCollected",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "obj_slp",
+							"sid": 934188925393159
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 662148270363631,
+							"parameters": {
+								"audio-file": "coinCollect",
+								"loop": "not-looping",
+								"volume": "-6",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 575078336711299
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "slp_sparkle",
+							"sid": 569539330109805,
+							"parameters": {
+								"animation": "\"CoinSparkle\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "slp_sparkle",
+							"sid": 905386710873734
+						}
+					],
+					"sid": 596641759132773
+				}
+			],
+			"sid": 245574870625060
+		}
+	],
+	"sid": 603214558191640
+}

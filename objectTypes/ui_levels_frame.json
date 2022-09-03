@@ -1,0 +1,57 @@
+{
+	"name": "ui_levels_frame",
+	"plugin-id": "Sprite",
+	"sid": 601354737812297,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 280,
+						"height": 150,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 7947235,
+						"collisionPoly": {
+							"points": [
+								0.010714285714285714,
+								0.02,
+								0.5,
+								0,
+								0.9857142857142858,
+								0.02,
+								0.9964285714285714,
+								0.5,
+								0.9857142857142858,
+								0.9733333333333334,
+								0.5,
+								0.9933333333333333,
+								0.010714285714285714,
+								0.9733333333333334,
+								0,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1
+					}
+				],
+				"sid": 516680895897422,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}

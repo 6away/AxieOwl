@@ -1,0 +1,26 @@
+{
+	"name": "tile_fade",
+	"plugin-id": "TiledBg",
+	"sid": 518060869832579,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 684408695111169
+		}
+	],
+	"effectTypes": [],
+	"image": {
+		"width": 64,
+		"height": 64,
+		"originX": 0.5,
+		"originY": 0.5,
+		"originalSource": "",
+		"exportFormat": "lossless",
+		"exportQuality": 0.8,
+		"imageSpriteId": 5669898,
+		"useCollisionPoly": true
+	}
+}

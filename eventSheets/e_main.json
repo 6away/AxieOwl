@@ -1,0 +1,306 @@
+{
+	"name": "e_main",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_controls"
+		},
+		{
+			"eventType": "include",
+			"includeSheet": "e_objects"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "INITIALIZE MAIN",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 974529763138860
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 257819244356415,
+							"parameters": {
+								"variable": "zoomScale",
+								"value": "0.5"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 291024012838041,
+							"parameters": {
+								"variable": "isZooming",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 336978607893073,
+							"parameters": {
+								"variable": "coinsCollected",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 478895480990589
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 368075827411922
+						},
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 170254509147036,
+							"parameters": {
+								"object": "obj_slp"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 195314193665763,
+							"parameters": {
+								"variable": "slpCoinsInLevel",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 661466401364945
+				}
+			],
+			"sid": 668918354354323
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CAMERA",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 543443613612665
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "camera",
+							"sid": 388771656586559,
+							"parameters": {
+								"x": "olek.X",
+								"y": "olek.Y"
+							}
+						}
+					],
+					"sid": 366682796322990
+				}
+			],
+			"sid": 869988243699945
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ZOOMING",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 211399483460615,
+							"parameters": {
+								"variable": "zoomScale",
+								"comparison": 2,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 822800327337326,
+							"parameters": {
+								"variable": "isZooming",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 989026135231630,
+							"parameters": {
+								"variable": "zoomScale",
+								"value": "zoomScale+0.008"
+							}
+						}
+					],
+					"sid": 643485864095682,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 710720328943789
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layout-scale",
+									"objectClass": "System",
+									"sid": 618604292156117,
+									"parameters": {
+										"scale": "zoomScale"
+									}
+								}
+							],
+							"sid": 553949186382419
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 541192714862335
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 920361144837073,
+							"parameters": {
+								"variable": "isZooming",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 112583266104756
+				}
+			],
+			"sid": 187681078006406
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "COIN COUNT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 387883136798694
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "txt_hudslps",
+							"sid": 950412902844098,
+							"parameters": {
+								"text": "\"SLP:\"&coinsCollected"
+							}
+						}
+					],
+					"sid": 742321186283559
+				}
+			],
+			"sid": 255479879719315
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TIME COUNT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 744545710175816,
+							"parameters": {
+								"variable": "isPlay"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 495433428485784,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 946300760833049
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 512053077442840,
+									"parameters": {
+										"variable": "totalTime",
+										"value": "0.1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "txt_time",
+									"sid": 305686075148308,
+									"parameters": {
+										"text": "\"TIME:\"&int(totalTime)"
+									}
+								}
+							],
+							"sid": 869083086341120
+						}
+					]
+				}
+			],
+			"sid": 390050378959730
+		}
+	],
+	"sid": 160359345242153
+}

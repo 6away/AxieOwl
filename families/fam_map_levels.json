@@ -1,0 +1,15 @@
+{
+	"name": "fam_map_levels",
+	"plugin-id": "Sprite",
+	"sid": 132542886444063,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"obj_level_1",
+		"obj_level_2",
+		"obj_level_3",
+		"obj_level_4",
+		"obj_level_5"
+	]
+}

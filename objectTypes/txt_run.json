@@ -1,0 +1,15 @@
+{
+	"name": "txt_run",
+	"plugin-id": "Text",
+	"sid": 665505507014916,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 365129769686680
+		}
+	],
+	"effectTypes": []
+}

@@ -1,0 +1,438 @@
+{
+	"name": "e_controls",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PLAYER ANIMATION",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-on-floor",
+							"objectClass": "olek",
+							"sid": 758857193854169,
+							"behaviorType": "Platform"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "olek",
+							"sid": 197178302792816,
+							"parameters": {
+								"animation": "\"ani_run\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 427420595482940
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 307569693201060
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "olek",
+							"sid": 881877579975675,
+							"parameters": {
+								"animation": "\"ani_jump\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 345557636025636
+				}
+			],
+			"sid": 979877263294314
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PLAYER DEATH",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "olek",
+							"sid": 387919469449102,
+							"parameters": {
+								"object": "collison_death"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 668325269336626,
+							"parameters": {
+								"audio-file": "death",
+								"loop": "not-looping",
+								"volume": "-10",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "olek",
+							"sid": 184487392163585,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "spawn-another-object",
+							"objectClass": "olek",
+							"sid": 330536759603690,
+							"parameters": {
+								"object": "particle_blood",
+								"layer": "\"player\"",
+								"image-point": "1",
+								"create-hierarchy": false
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "particle_blood",
+							"sid": 893790888024192,
+							"parameters": {
+								"angle": "270"
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "camera",
+							"sid": 284593317087507,
+							"behaviorType": "ScrollTo",
+							"parameters": {
+								"magnitude": "10",
+								"duration": "0.4",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 887727321092472,
+							"parameters": {
+								"variable": "isPlay",
+								"value": "false"
+							}
+						},
+						{
+							"callFunction": "playerDeath",
+							"sid": 414507268781079
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "olek",
+							"sid": 784408402389373,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 911284177842696,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "olek",
+							"sid": 200389155785062,
+							"parameters": {
+								"instance-variable": "isdead",
+								"value": "1"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "camera",
+							"sid": 173858993117016
+						}
+					],
+					"sid": 326115794731103
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "olek",
+							"sid": 469820196996836,
+							"parameters": {
+								"instance-variable": "isdead",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 893195221121638
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "fadeOut",
+							"sid": 241992157802888,
+							"parameters": [
+								"1"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 925996527568093,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "olek",
+							"sid": 841040488551607
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 791898990374834,
+							"parameters": {
+								"layout": "MENU_RETRY"
+							}
+						}
+					],
+					"sid": 462781787911828
+				}
+			],
+			"sid": 275099865285268
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PLAYER CONTROLS",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "RUNNING",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "olek",
+									"sid": 127810222894356,
+									"parameters": {
+										"instance-variable": "runningleft"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-mirrored",
+									"objectClass": "olek",
+									"sid": 662946405768004,
+									"parameters": {
+										"state": "mirrored"
+									}
+								},
+								{
+									"id": "simulate-control",
+									"objectClass": "olek",
+									"sid": 115047595381265,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 532972837201524
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "olek",
+									"sid": 197301914479045,
+									"parameters": {
+										"instance-variable": "runningleft"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "olek",
+									"sid": 582637815260449,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "right"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "olek",
+									"sid": 178343473827094,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 566444075460607
+						}
+					],
+					"sid": 514719654298607
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "JUMPING",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-touch-start",
+									"objectClass": "Touch",
+									"sid": 450950475223208
+								},
+								{
+									"id": "is-on-floor",
+									"objectClass": "olek",
+									"sid": 603883289733952,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "olek",
+									"sid": 930878183534652,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "jump"
+									}
+								},
+								{
+									"callFunction": "jumpGrunt",
+									"sid": 290208595250101,
+									"parameters": [
+										"choose(1,2,3)"
+									]
+								}
+							],
+							"sid": 825260923178102
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "olek",
+									"sid": 546868166349123,
+									"parameters": {
+										"object": "collison_wall"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 789236617756315,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 624623780343936
+										}
+									],
+									"actions": [
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 332417274138722,
+											"parameters": {
+												"audio-file": "landingFX",
+												"loop": "not-looping",
+												"volume": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 720825174827295
+								}
+							]
+						}
+					],
+					"sid": 501294867767170
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CHANGE DIRECTIONS",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-collision-with-another-object",
+									"objectClass": "olek",
+									"sid": 359402005369445,
+									"parameters": {
+										"object": "collison_wall"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "toggle-boolean-instvar",
+									"objectClass": "olek",
+									"sid": 549105626843429,
+									"parameters": {
+										"instance-variable": "runningleft"
+									}
+								}
+							],
+							"sid": 668295394713137
+						}
+					],
+					"sid": 620138861416009
+				}
+			],
+			"sid": 684366265072288
+		}
+	],
+	"sid": 946419658312383
+}

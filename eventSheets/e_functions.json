@@ -1,0 +1,992 @@
+{
+	"name": "e_functions",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FUNCTION START LEVEL",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "startLevel",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "direction",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 291588239100934
+						},
+						{
+							"name": "timeGoal",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 485639605081059
+						},
+						{
+							"name": "coinGoal",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 622757403012013
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 840326836402907,
+							"parameters": {
+								"variable": "coinstobeat",
+								"value": "coinGoal"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 204550833441508,
+							"parameters": {
+								"variable": "timetobeat",
+								"value": "timeGoal"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 404138767340553,
+							"parameters": {
+								"object-to-create": "olek",
+								"layer": "\"player\"",
+								"x": "spwan_buba.X",
+								"y": "spwan_buba.Y",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "olek",
+							"sid": 246221223578081,
+							"parameters": {
+								"animation": "\"ani_idle\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 766261587050899,
+							"parameters": {
+								"variable": "totalTime",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 747773260657728,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 961289588601480,
+									"parameters": {
+										"variable": "direction",
+										"comparison": 0,
+										"value": "\"left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "olek",
+									"sid": 940880546438562,
+									"parameters": {
+										"instance-variable": "runningleft",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "olek",
+									"sid": 789596430866853,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 297485662351337
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 968170010819713,
+									"parameters": {
+										"variable": "direction",
+										"comparison": 0,
+										"value": "\"right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "olek",
+									"sid": 681821877869733,
+									"parameters": {
+										"instance-variable": "runningleft",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "olek",
+									"sid": 237286501823735,
+									"parameters": {
+										"state": "not-mirrored"
+									}
+								}
+							],
+							"sid": 198897497619628
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 281512758052793,
+									"parameters": {
+										"object-to-create": "camera",
+										"layer": "\"player\"",
+										"x": "olek.X",
+										"y": "olek.Y",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 113125841395702,
+									"parameters": {
+										"group-name": "\"PLAYER CONTROLS\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 257391298172532,
+									"parameters": {
+										"group-name": "\"PLAYER ANIMATION\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"callFunction": "fadeIn",
+									"sid": 550562604132106,
+									"parameters": [
+										"2"
+									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 819744600557274,
+									"parameters": {
+										"variable": "isZooming",
+										"value": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 861369441027516,
+									"parameters": {
+										"seconds": "0.5"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 288990527680078,
+									"parameters": {
+										"object-to-create": "txt_ready",
+										"layer": "\"hud\"",
+										"x": "ViewportWidth(\"hud\")/2",
+										"y": "ViewportHeight(\"hud\")/2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "txt_ready",
+									"sid": 427788785511940,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.25",
+										"off-time": "0.25",
+										"duration": "2"
+									}
+								},
+								{
+									"callFunction": "hudSlideIn",
+									"sid": 916883579567332
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 847428115131531,
+									"parameters": {
+										"seconds": "2"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "txt_ready",
+									"sid": 940617724394590
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 574900830239152,
+									"parameters": {
+										"object-to-create": "txt_run",
+										"layer": "\"hud\"",
+										"x": "ViewportWidth(\"hud\")/2",
+										"y": "ViewportHeight(\"hud\")/2",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 532373543033841,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "start-fade",
+									"objectClass": "txt_run",
+									"sid": 785393925815472,
+									"behaviorType": "Fade"
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 533070265366702,
+									"parameters": {
+										"seconds": "0.2"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 527145174404891,
+									"parameters": {
+										"variable": "isPlay",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 198965192418641,
+									"parameters": {
+										"group-name": "\"PLAYER CONTROLS\"",
+										"state": "toggle-active"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 375880235017081,
+									"parameters": {
+										"group-name": "\"PLAYER ANIMATION\"",
+										"state": "toggle-active"
+									}
+								}
+							],
+							"sid": 126108969291683
+						}
+					]
+				}
+			],
+			"sid": 575781348700266
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FUNCTION PLAYER DEATH",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "playerDeath",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 378768938414290,
+					"children": [
+						{
+							"eventType": "variable",
+							"name": "deathForce",
+							"type": "number",
+							"initialValue": "8",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 320439461166871
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 678090664686264,
+									"parameters": {
+										"name": "\"i\"",
+										"start-index": "1",
+										"end-index": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 546650738580426,
+									"parameters": {
+										"object-to-create": "olek_death",
+										"layer": "\"player\"",
+										"x": "olek.ImagePointX(loopindex(\"i\"))",
+										"y": "olek.ImagePointY(loopindex(\"i\"))",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "olek_death",
+									"sid": 576247839003575,
+									"parameters": {
+										"frame-number": "loopindex(\"i\")-1"
+									}
+								},
+								{
+									"id": "apply-impulse-at-angle",
+									"objectClass": "olek_death",
+									"sid": 470924310403725,
+									"behaviorType": "Physics",
+									"parameters": {
+										"impulse": "deathForce",
+										"angle": "random(240,300)",
+										"image-point": "0"
+									}
+								}
+							],
+							"sid": 396014830459501
+						}
+					]
+				}
+			],
+			"sid": 400642156711079
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL SCORE",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "level_score",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 764447564874510,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 477869883768912,
+									"parameters": {
+										"variable": "coinsCollected",
+										"comparison": 5,
+										"value": "coinstobeat"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 831514962300191
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 808206019625030,
+									"parameters": {
+										"variable": "crowns",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 640177205824232
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 266905448440271,
+									"parameters": {
+										"variable": "totalTime",
+										"comparison": 3,
+										"value": "timetobeat"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 205647762634049
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 686859592528146,
+									"parameters": {
+										"variable": "crowns",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 939965506964990
+						}
+					]
+				}
+			],
+			"sid": 512028388955207
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FADE",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "fadeIn",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "fadeTime",
+							"type": "number",
+							"initialValue": "5",
+							"comment": "",
+							"sid": 131381236163269
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "tile_fade",
+							"sid": 476492540864053,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "tile_fade",
+							"sid": 443026148106560,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "fadeTime",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 497090132470530
+				},
+				{
+					"functionName": "fadeOut",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "fadeTime",
+							"type": "number",
+							"initialValue": "5",
+							"comment": "",
+							"sid": 934470938834838
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "tile_fade",
+							"sid": 345683814436860,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "tile_fade",
+							"sid": 882945584849666,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "fadeTime",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 703284466280241
+				}
+			],
+			"sid": 500655408672258
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "HUD SLIDE IN",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "hudSlideIn",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 354391849406749,
+							"parameters": {
+								"object-to-create": "hudframe_slp",
+								"layer": "\"hud\"",
+								"x": "26",
+								"y": "-14",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 102058514874953,
+							"parameters": {
+								"object-to-create": "hudframe_time",
+								"layer": "\"hud\"",
+								"x": "204",
+								"y": "-14",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 499917977956721,
+							"parameters": {
+								"object-to-create": "txt_hudslps",
+								"layer": "\"hud\"",
+								"x": "hudframe_slp.ImagePointX(1)",
+								"y": "hudframe_slp.ImagePointY(1)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 931477704782437,
+							"parameters": {
+								"object-to-create": "txt_time",
+								"layer": "\"hud\"",
+								"x": "hudframe_time.ImagePointX(1)",
+								"y": "hudframe_time.ImagePointY(1)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "hudframe_slp",
+							"sid": 145941139419372,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "24",
+								"time": "1",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "hudframe_time",
+							"sid": 297653232664207,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "24",
+								"time": "1",
+								"ease": "easeoutback",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "txt_time",
+							"sid": 620763090230518,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "24",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "txt_hudslps",
+							"sid": 447666790654102,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetY",
+								"end-value": "24",
+								"time": "1",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no"
+							}
+						}
+					],
+					"sid": 941593872324219
+				}
+			],
+			"sid": 405069911164771
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GRUNTS SFX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "jumpGrunt",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "gruntpitch",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 413014763578975
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 671937701914206,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 245694108391883,
+									"parameters": {
+										"variable": "gruntpitch",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 646351664011472,
+									"parameters": {
+										"audio-file": "grunt1FX",
+										"loop": "not-looping",
+										"volume": "16",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 654995652602931
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 760891822914162,
+									"parameters": {
+										"variable": "gruntpitch",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 109372162562724,
+									"parameters": {
+										"audio-file": "grunt2FX",
+										"loop": "not-looping",
+										"volume": "16",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 452900291888505
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 696132291946412,
+									"parameters": {
+										"variable": "gruntpitch",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 143899827690097,
+									"parameters": {
+										"audio-file": "grunt3FX",
+										"loop": "not-looping",
+										"volume": "16",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 945508579510679
+						}
+					]
+				}
+			],
+			"sid": 130403338611552
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FADE MUSIC",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "fadeOutMusic",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "trackName",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 245339792114089
+						},
+						{
+							"name": "fadeDuration",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"sid": 913725935972786
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 913127923558399,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 940419993078179,
+									"parameters": {
+										"variable": "muteVolume"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "fade-volume",
+									"objectClass": "Audio",
+									"sid": 147402559007026,
+									"parameters": {
+										"tag": "trackName",
+										"db": "-100",
+										"duration": "fadeDuration",
+										"ending": "stop"
+									}
+								}
+							],
+							"sid": 929716655401732
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 353906728911620
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 302546693152468
+								}
+							],
+							"sid": 373490840192689
+						}
+					]
+				}
+			],
+			"sid": 418371953856371
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "GO TO LEVEL",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "goToLevel",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 917102905931851,
+							"parameters": {
+								"layout": "\"LEVEL_\"&level_playing"
+							}
+						}
+					],
+					"sid": 149255878306107
+				}
+			],
+			"sid": 181880053252062
+		}
+	],
+	"sid": 151954773617941
+}

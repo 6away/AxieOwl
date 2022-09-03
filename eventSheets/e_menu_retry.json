@@ -1,0 +1,185 @@
+{
+	"name": "e_menu_retry",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 768036527908791
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeIn",
+					"sid": 897525445114040,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 273633027795581,
+					"parameters": {
+						"audio-file": "level failed",
+						"loop": "not-looping",
+						"volume": "-8",
+						"tag-optional": "\"retry\""
+					}
+				}
+			],
+			"sid": 483913323775833
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 283665689804806,
+					"parameters": {
+						"object": "btn_retry"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 426469508213319,
+					"parameters": {
+						"variable": "touchactive"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 293507504752486,
+					"parameters": {
+						"variable": "touchactive",
+						"value": "true"
+					}
+				},
+				{
+					"callFunction": "fadeOut",
+					"sid": 556148539966939,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 313980130497278,
+					"parameters": {
+						"audio-file": "level selected",
+						"loop": "not-looping",
+						"volume": "-8",
+						"tag-optional": "\"selected\""
+					}
+				},
+				{
+					"callFunction": "fadeOutMusic",
+					"sid": 591612676447281,
+					"parameters": [
+						"\"retry\"",
+						"0.5"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 156970125005412,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 634392853079362,
+					"parameters": {
+						"variable": "slpCoinsInLevel",
+						"value": "0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 933843527389493,
+					"parameters": {
+						"layout": "LEVEL_1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 565115965945952,
+					"parameters": {
+						"variable": "isPlay",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 641575111788943
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 359782653682068,
+					"parameters": {
+						"object": "btn_quit"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 294946561535042,
+					"parameters": {
+						"variable": "touchactive"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeOut",
+					"sid": 219202891318667,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"callFunction": "fadeOutMusic",
+					"sid": 202603935597631,
+					"parameters": [
+						"\"retry\"",
+						"0.5"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 264244561534815,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 532869706070864,
+					"parameters": {
+						"layout": "MENU_TITLE"
+					}
+				}
+			],
+			"sid": 815758548678255
+		}
+	],
+	"sid": 793699698907228
+}

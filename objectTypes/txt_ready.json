@@ -1,0 +1,20 @@
+{
+	"name": "txt_ready",
+	"plugin-id": "Text",
+	"sid": 403696971096144,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Fade",
+			"name": "Fade",
+			"sid": 713015746376089
+		},
+		{
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 744390927348648
+		}
+	],
+	"effectTypes": []
+}

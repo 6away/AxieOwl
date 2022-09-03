@@ -1,0 +1,220 @@
+{
+	"name": "e_menu_next",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 985818651641231
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "txt_total_slp",
+					"sid": 364817403698159,
+					"parameters": {
+						"text": "\"SLP: \" & coinsCollected & \"/\" & slpCoinsInLevel"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txt_total_time",
+					"sid": 630801589558802,
+					"parameters": {
+						"text": "\"TIME: \" & totalTime"
+					}
+				},
+				{
+					"callFunction": "fadeIn",
+					"sid": 435238055101598,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 471302001299555,
+					"parameters": {
+						"audio-file": "level completed",
+						"loop": "looping",
+						"volume": "0",
+						"tag-optional": "\"levelcomplete\""
+					}
+				}
+			],
+			"sid": 487785599579482
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 576935670858092,
+					"parameters": {
+						"first-value": "totalTime",
+						"comparison": 2,
+						"second-value": "100"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 299753074642640,
+					"parameters": {
+						"object-to-create": "txt_code",
+						"layer": "\"text\"",
+						"x": "77",
+						"y": "568",
+						"create-hierarchy": false,
+						"template-name": "\"\""
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txt_code",
+					"sid": 611660309027875,
+					"parameters": {
+						"text": "\"Go to axieowl.com to redeem your prize Code :Lki987\""
+					}
+				}
+			],
+			"sid": 349608007335510
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 225356088208610,
+					"parameters": {
+						"object": "btn_playagain"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 667800401532998,
+					"parameters": {
+						"variable": "touchactive"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeOut",
+					"sid": 463261792105101,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"callFunction": "fadeOutMusic",
+					"sid": 688727898655351,
+					"parameters": [
+						"\"levelcomplete\"",
+						"0.5"
+					]
+				},
+				{
+					"id": "go-to-layout-by-name",
+					"objectClass": "System",
+					"sid": 264611755097941,
+					"parameters": {
+						"layout": "\"LEVEL_\"&levelpassed"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 875140827115024,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 532132718384975,
+					"parameters": {
+						"variable": "touchactive",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 846220257713487
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 437120323240162,
+					"parameters": {
+						"object": "btn_next"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 602176100863104,
+					"parameters": {
+						"variable": "touchactive"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeOut",
+					"sid": 502295467911436,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"callFunction": "fadeOutMusic",
+					"sid": 451484021006248,
+					"parameters": [
+						"\"levelcomplete\"",
+						"0.5"
+					]
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 382720147742178,
+					"parameters": {
+						"layout": "MAP"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 333415732421104,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 900700566893583,
+					"parameters": {
+						"variable": "touchactive",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 528189853574880
+		}
+	],
+	"sid": 796677962193488
+}

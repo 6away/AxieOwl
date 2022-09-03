@@ -1,0 +1,32 @@
+{
+	"name": "e_level_2",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_main"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 307041637151333
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "startLevel",
+					"sid": 104791866286955,
+					"parameters": [
+						"\"left\"",
+						"0",
+						"0"
+					]
+				}
+			],
+			"sid": 432385565172307
+		}
+	],
+	"sid": 410825785300894
+}

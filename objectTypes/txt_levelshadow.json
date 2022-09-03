@@ -1,0 +1,14 @@
+{
+	"name": "txt_levelshadow",
+	"plugin-id": "Text",
+	"sid": 738611131260375,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [
+		{
+			"effectId": "radialblur",
+			"name": "RadialBlur"
+		}
+	]
+}

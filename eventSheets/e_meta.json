@@ -1,0 +1,34 @@
+{
+	"name": "e_meta",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 788464112839953
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "camera",
+					"sid": 657023453394530
+				},
+				{
+					"id": "destroy",
+					"objectClass": "fam_particles",
+					"sid": 356448436297763
+				},
+				{
+					"id": "destroy",
+					"objectClass": "fam_player",
+					"sid": 163813601311812
+				}
+			],
+			"sid": 157657979331330
+		}
+	],
+	"sid": 740204687971949
+}

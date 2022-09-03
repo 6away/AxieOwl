@@ -1,0 +1,20 @@
+{
+	"name": "txt_time",
+	"plugin-id": "Text",
+	"sid": 144616093479334,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Tween",
+			"name": "Tween",
+			"sid": 155443929859711
+		},
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 484423943645270
+		}
+	],
+	"effectTypes": []
+}

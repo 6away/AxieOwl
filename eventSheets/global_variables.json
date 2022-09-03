@@ -1,0 +1,200 @@
+{
+	"name": "global_variables",
+	"events": [
+		{
+			"eventType": "comment",
+			"text": "// Zoom"
+		},
+		{
+			"eventType": "variable",
+			"name": "zoomScale",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 510011998541739
+		},
+		{
+			"eventType": "variable",
+			"name": "isZooming",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 508520541667561
+		},
+		{
+			"eventType": "comment",
+			"text": "// Achievements Time"
+		},
+		{
+			"eventType": "variable",
+			"name": "totalTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 696607752326527
+		},
+		{
+			"eventType": "variable",
+			"name": "levelpassed",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 315289372832022
+		},
+		{
+			"eventType": "variable",
+			"name": "timetobeat",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 685318586228143
+		},
+		{
+			"eventType": "comment",
+			"text": "//Achievements Coins"
+		},
+		{
+			"eventType": "variable",
+			"name": "coinstobeat",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 425713915115852
+		},
+		{
+			"eventType": "variable",
+			"name": "crowns",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 165517371166548
+		},
+		{
+			"eventType": "variable",
+			"name": "slpCoinsInLevel",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 829220482073143
+		},
+		{
+			"eventType": "variable",
+			"name": "coinsCollected",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 573027326157886
+		},
+		{
+			"eventType": "comment",
+			"text": "// Scrolling"
+		},
+		{
+			"eventType": "variable",
+			"name": "startTouch",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 349609427950453
+		},
+		{
+			"eventType": "variable",
+			"name": "startScroll",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 572029815105200
+		},
+		{
+			"eventType": "variable",
+			"name": "dragging",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 412620626376491
+		},
+		{
+			"eventType": "comment",
+			"text": "//Other"
+		},
+		{
+			"eventType": "variable",
+			"name": "isPlay",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 230947363294680
+		},
+		{
+			"eventType": "variable",
+			"name": "touchactive",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 400382743259409
+		},
+		{
+			"eventType": "variable",
+			"name": "muteVolume",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 196832595395853
+		},
+		{
+			"eventType": "comment",
+			"text": "//levels"
+		},
+		{
+			"eventType": "variable",
+			"name": "level_playing",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "The number value is the name of the current level the player is playing",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 707521078176061
+		},
+		{
+			"eventType": "variable",
+			"name": "levelUnlock",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 646430076534308
+		}
+	],
+	"sid": 213474433462997
+}

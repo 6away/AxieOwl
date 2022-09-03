@@ -1,0 +1,12 @@
+{
+	"name": "fam_particles",
+	"plugin-id": "Particles",
+	"sid": 652214721422610,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"particle_shard",
+		"particle_blood"
+	]
+}

@@ -1,0 +1,158 @@
+{
+	"name": "e_menu_title",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 664107182142415
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeIn",
+					"sid": 269962969361316,
+					"parameters": [
+						"1"
+					]
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 424940564255315,
+					"parameters": {
+						"audio-file": "Origin",
+						"loop": "looping",
+						"volume": "-5",
+						"tag-optional": "\"title\""
+					}
+				}
+			],
+			"sid": 116108872226236
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 765229382973810,
+					"parameters": {
+						"object": "btn_play"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 722583910145868,
+					"parameters": {
+						"variable": "touchactive"
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "fadeOut",
+					"sid": 166792567614554,
+					"parameters": [
+						"0.5"
+					]
+				},
+				{
+					"callFunction": "fadeOutMusic",
+					"sid": 507766801478193,
+					"parameters": [
+						"\"title\"",
+						"0.5"
+					]
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 463228208957270,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 618636458058990,
+					"parameters": {
+						"layout": "LEVEL_1"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 313490838865080,
+					"parameters": {
+						"variable": "isPlay",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 301388331159920
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-tap-object",
+					"objectClass": "Touch",
+					"sid": 341191922721579,
+					"parameters": {
+						"object": "btn_quit"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 199714360797021,
+					"parameters": {
+						"variable": "touchactive"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 655290104733847
+				},
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 153103249628458
+				}
+			],
+			"sid": 717263133075370
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-back-button",
+					"objectClass": "Browser",
+					"sid": 211292097278912
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 717725087139336
+				},
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 683693977177817
+				}
+			],
+			"sid": 152504558398924
+		}
+	],
+	"sid": 511917758410277
+}

@@ -1,0 +1,669 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 30800,
+	"name": "Origin Roadmap",
+	"runtime": "c3",
+	"useWorker": "dom",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Touch",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tilemap",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Spritefont2",
+			"name": "Sprite font",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Platform",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "jumpthru",
+			"name": "Jump-thru",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "radialblur",
+			"name": "Radial blur",
+			"author": "Scirra",
+			"version": "r308",
+			"bundled": false
+		}
+	],
+	"uniqueId": "1s0mn0onowc",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"btn_playagain",
+							"btn_retry",
+							"btn_quit",
+							"btn_play",
+							"btn_next"
+						],
+						"subfolders": [],
+						"name": "buttons"
+					},
+					{
+						"items": [
+							"hudframe_slp",
+							"hudframe_time",
+							"ui_levels_frame",
+							"img_startpage"
+						],
+						"subfolders": [],
+						"name": "hud"
+					},
+					{
+						"items": [
+							"particle_blood",
+							"particle_shard"
+						],
+						"subfolders": [],
+						"name": "particles"
+					},
+					{
+						"items": [
+							"olek",
+							"obj_spring",
+							"olek_death",
+							"obj_shard",
+							"obj_slp",
+							"slp_sparkle"
+						],
+						"subfolders": [],
+						"name": "objects"
+					},
+					{
+						"items": [
+							"directionpost",
+							"smallpost",
+							"board"
+						],
+						"subfolders": [],
+						"name": "signs"
+					},
+					{
+						"items": [
+							"obj_level_1",
+							"obj_level_2",
+							"obj_level_3",
+							"obj_level_4",
+							"obj_level_5"
+						],
+						"subfolders": [],
+						"name": "levels"
+					}
+				],
+				"name": "sprite"
+			},
+			{
+				"items": [
+					"collison_death",
+					"collison_floor",
+					"collison_jumpthrough",
+					"collison_wall",
+					"camera",
+					"spwan_buba"
+				],
+				"subfolders": [],
+				"name": "meta"
+			},
+			{
+				"items": [
+					"Touch",
+					"Browser",
+					"Audio",
+					"ar_crownsEarned"
+				],
+				"subfolders": [],
+				"name": "input"
+			},
+			{
+				"items": [
+					"tile_bricks",
+					"tile_objects",
+					"tile_fade",
+					"tile_background",
+					"tile_newbricks",
+					"Tilemap",
+					"Green",
+					"TileMapGrass"
+				],
+				"subfolders": [],
+				"name": "tiles"
+			},
+			{
+				"items": [
+					"txt_ready",
+					"txt_run",
+					"origin",
+					"txt_signpost_0",
+					"txt_hudslps",
+					"txt_signpost_1",
+					"txt_time",
+					"txt_signpost_2",
+					"txt_total_slp",
+					"txt_total_time",
+					"txt_playagain",
+					"txt_quit",
+					"txt_retry",
+					"txt_levelfailed",
+					"txt_levelshadow",
+					"txt_play",
+					"txt_title",
+					"txt_congratulations",
+					"txt_code",
+					"txt_level_num"
+				],
+				"subfolders": [],
+				"name": "text"
+			}
+		]
+	},
+	"autosaveData": null,
+	"containers": [],
+	"families": {
+		"items": [
+			"fam_collisions",
+			"fam_player",
+			"fam_particles",
+			"fam_map_levels"
+		],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"LEVEL_1",
+			"LEVEL_2",
+			"META",
+			"MENU_NEXT",
+			"MENU_RETRY",
+			"MENU_TITLE",
+			"MAP"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"e_level_1",
+					"e_level_2"
+				],
+				"subfolders": [],
+				"name": "levels"
+			},
+			{
+				"items": [
+					"e_menu_next",
+					"e_menu_retry",
+					"e_menu_title",
+					"e_map"
+				],
+				"subfolders": [],
+				"name": "menus"
+			},
+			{
+				"items": [
+					"e_controls",
+					"e_main",
+					"e_objects",
+					"e_functions",
+					"e_meta",
+					"global_variables"
+				],
+				"subfolders": [],
+				"name": "meta"
+			}
+		]
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "button push.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 863653316559159,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "coinCollect.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 907849745022815,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "death.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 304511195374377,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "grunt1FX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 326108750684684,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "grunt2FX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 718766858058034,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "grunt3FX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 785410758303660,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "landingFX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 106577658196871,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "pop1FX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 743186591551819,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "springFX.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 662848102078631,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "success chime 6.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 447816212745394,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "level completed.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 420672991123628,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "level failed.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 509355136248714,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "level play.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 939954049624988,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "level selected.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 110930820701095,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "map.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 524313302111476,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "title screen.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 837007394786935,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Origin.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 690065184735035,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "Ancient Medium.ttf",
+					"type": "application/font-sfnt",
+					"sid": 133044778792425,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "Capture_it.ttf",
+					"type": "application/font-sfnt",
+					"sid": 109985903490199,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 282606298301797,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 807116211384894,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 405661114362519,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 698670096560828,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 832841730432055,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 371901240719596,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 232889742411757,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Timeline 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "normalized",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": true,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			0.0196078431372549,
+			0.0196078431372549,
+			0.0196078431372549,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "portrait",
+		"webgpu": "auto",
+		"gpuPreference": "high-performance",
+		"scriptsType": "module",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "trilinear",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "percent",
+		"preloadSounds": true,
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"autoReloadScriptsOnPreview": false
+	},
+	"viewportWidth": 360,
+	"viewportHeight": 640,
+	"firstLayout": "MENU_TITLE"
+}

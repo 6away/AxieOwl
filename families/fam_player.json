@@ -1,0 +1,12 @@
+{
+	"name": "fam_player",
+	"plugin-id": "Sprite",
+	"sid": 791341715467306,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"olek",
+		"olek_death"
+	]
+}

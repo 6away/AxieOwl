@@ -1,0 +1,821 @@
+{
+	"name": "e_map",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "INITIALISE MAP",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 831629720665364
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-animation",
+							"objectClass": "fam_map_levels",
+							"sid": 618752959272680
+						},
+						{
+							"callFunction": "fadeIn",
+							"sid": 531546148002855,
+							"parameters": [
+								"1"
+							]
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 191433588433034,
+							"parameters": {
+								"variable": "touchactive",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 403444742898658
+				}
+			],
+			"sid": 997620187566452
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SCROLLING",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-touch-start",
+							"objectClass": "Touch",
+							"sid": 549128193566063
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 800262592009020,
+							"parameters": {
+								"variable": "dragging",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 950628601078009,
+							"parameters": {
+								"variable": "startTouch",
+								"value": "Touch.AbsoluteY"
+							}
+						}
+					],
+					"sid": 579960338528218
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-touch",
+							"objectClass": "Touch",
+							"sid": 912972491753905,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 662643220677241,
+							"parameters": {
+								"variable": "dragging",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 142744648966173,
+							"parameters": {
+								"variable": "startScroll",
+								"value": "scrolly"
+							}
+						}
+					],
+					"sid": 861934637330265
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 540675802841734,
+							"parameters": {
+								"variable": "dragging",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "scroll-to-position",
+							"objectClass": "System",
+							"sid": 612026016600552,
+							"parameters": {
+								"x": "0",
+								"y": "startScroll+startTouch-Touch.AbsoluteY"
+							}
+						}
+					],
+					"sid": 488405860766264
+				}
+			],
+			"sid": 237983234493542
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BUTTON QUIT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 126508842786680,
+							"parameters": {
+								"object": "btn_quit"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 637924870317582,
+							"parameters": {
+								"variable": "touchactive"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "fadeOut",
+							"sid": 938855486041892,
+							"parameters": [
+								"0.5"
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 216064516262742,
+							"parameters": {
+								"seconds": "0.5"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 348275031320522,
+							"parameters": {
+								"layout": "MENU_TITLE"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 227915311662232,
+							"parameters": {
+								"variable": "touchactive",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 502390623018633
+				}
+			],
+			"sid": 207862448232339
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MAP LEVEL",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 551613871073208,
+							"parameters": {
+								"object": "obj_level_1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 617944628482134,
+							"parameters": {
+								"variable": "level_playing",
+								"value": "1"
+							}
+						},
+						{
+							"callFunction": "goToLevel",
+							"sid": 286002007689357
+						}
+					],
+					"sid": 103148468700176
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 964296525440847,
+							"parameters": {
+								"object": "obj_level_2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 512270697647000,
+							"parameters": {
+								"variable": "level_playing",
+								"value": "2"
+							}
+						},
+						{
+							"callFunction": "goToLevel",
+							"sid": 876104561353038
+						}
+					],
+					"sid": 557945162923847
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 734496280334726,
+							"parameters": {
+								"object": "obj_level_3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 652927222417171,
+							"parameters": {
+								"variable": "level_playing",
+								"value": "3"
+							}
+						},
+						{
+							"callFunction": "goToLevel",
+							"sid": 855809267637600
+						}
+					],
+					"sid": 794111231163293
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 945140173287652,
+							"parameters": {
+								"object": "obj_level_4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 285297845464256,
+							"parameters": {
+								"variable": "level_playing",
+								"value": "4"
+							}
+						},
+						{
+							"callFunction": "goToLevel",
+							"sid": 619306009837281
+						}
+					],
+					"sid": 668735392892031
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tap-object",
+							"objectClass": "Touch",
+							"sid": 895982268449560,
+							"parameters": {
+								"object": "obj_level_5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 796712097854567,
+							"parameters": {
+								"variable": "level_playing",
+								"value": "5"
+							}
+						},
+						{
+							"callFunction": "goToLevel",
+							"sid": 591618038956750
+						}
+					],
+					"sid": 585828982311247
+				}
+			],
+			"sid": 918265255104960
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL CROWNS EARNED",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 325277084051171,
+							"parameters": {
+								"variable": "levelpassed",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "level_score",
+							"sid": 783742270341642
+						}
+					],
+					"sid": 622632955792584,
+					"children": [
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "level_1_crowns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_level_1",
+											"sid": 796623067812115,
+											"parameters": {
+												"comparison": 2,
+												"number": "crowns"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 275221869450259,
+											"parameters": {
+												"variable": "level_playing",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-x",
+											"objectClass": "ar_crownsEarned",
+											"sid": 627818514727800,
+											"parameters": {
+												"x": "level_playing",
+												"value": "crowns"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_level_1",
+											"sid": 831887546067308,
+											"parameters": {
+												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+											}
+										}
+									],
+									"sid": 542556802490453,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 783659214264800,
+													"parameters": {
+														"variable": "levelUnlock",
+														"comparison": 3,
+														"value": "level_playing"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 554197841238580,
+													"parameters": {
+														"variable": "levelUnlock",
+														"value": "levelUnlock+1"
+													}
+												}
+											],
+											"sid": 955625011591813
+										}
+									]
+								}
+							],
+							"sid": 582321010482376
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "level_2_crowns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_level_2",
+											"sid": 256892757797587,
+											"parameters": {
+												"comparison": 2,
+												"number": "crowns"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 433392400302112,
+											"parameters": {
+												"variable": "level_playing",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-x",
+											"objectClass": "ar_crownsEarned",
+											"sid": 835885588974160,
+											"parameters": {
+												"x": "level_playing",
+												"value": "crowns"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_level_1",
+											"sid": 781937317485774,
+											"parameters": {
+												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+											}
+										}
+									],
+									"sid": 852515039264859,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 588292477514536,
+													"parameters": {
+														"variable": "levelUnlock",
+														"comparison": 3,
+														"value": "level_playing"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 644730228961552,
+													"parameters": {
+														"variable": "levelUnlock",
+														"value": "levelUnlock+1"
+													}
+												}
+											],
+											"sid": 779250599034777
+										}
+									]
+								}
+							],
+							"sid": 909355631544848
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "level_3_crowns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_level_3",
+											"sid": 500787480352318,
+											"parameters": {
+												"comparison": 2,
+												"number": "crowns"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 618835833818961,
+											"parameters": {
+												"variable": "level_playing",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-x",
+											"objectClass": "ar_crownsEarned",
+											"sid": 529835260548767,
+											"parameters": {
+												"x": "level_playing",
+												"value": "crowns"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_level_1",
+											"sid": 322718664619909,
+											"parameters": {
+												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+											}
+										}
+									],
+									"sid": 688324715865930,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 149408566771892,
+													"parameters": {
+														"variable": "levelUnlock",
+														"comparison": 3,
+														"value": "level_playing"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 967974574879697,
+													"parameters": {
+														"variable": "levelUnlock",
+														"value": "levelUnlock+1"
+													}
+												}
+											],
+											"sid": 713163142267943
+										}
+									]
+								}
+							],
+							"sid": 699282113118277
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "level_4_crowns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_level_4",
+											"sid": 755496508738875,
+											"parameters": {
+												"comparison": 2,
+												"number": "crowns"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 696849058792101,
+											"parameters": {
+												"variable": "level_playing",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-x",
+											"objectClass": "ar_crownsEarned",
+											"sid": 427875147169630,
+											"parameters": {
+												"x": "level_playing",
+												"value": "crowns"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_level_1",
+											"sid": 209824195575882,
+											"parameters": {
+												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+											}
+										}
+									],
+									"sid": 350343860528086,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 817011181600232,
+													"parameters": {
+														"variable": "levelUnlock",
+														"comparison": 3,
+														"value": "level_playing"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 435829943828800,
+													"parameters": {
+														"variable": "levelUnlock",
+														"value": "levelUnlock+1"
+													}
+												}
+											],
+											"sid": 228458151051747
+										}
+									]
+								}
+							],
+							"sid": 718975866716367
+						},
+						{
+							"eventType": "group",
+							"disabled": false,
+							"title": "level_5_crowns",
+							"description": "",
+							"isActiveOnStart": true,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-animation-frame",
+											"objectClass": "obj_level_5",
+											"sid": 549935325269866,
+											"parameters": {
+												"comparison": 2,
+												"number": "crowns"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 715629496605615,
+											"parameters": {
+												"variable": "level_playing",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-at-x",
+											"objectClass": "ar_crownsEarned",
+											"sid": 352068771042583,
+											"parameters": {
+												"x": "level_playing",
+												"value": "crowns"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "obj_level_1",
+											"sid": 633999907705472,
+											"parameters": {
+												"frame-number": "1+ar_crownsEarned.At(level_playing)"
+											}
+										}
+									],
+									"sid": 726660684492077,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 827686255513974,
+													"parameters": {
+														"variable": "levelUnlock",
+														"comparison": 3,
+														"value": "level_playing"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 379105950297897,
+													"parameters": {
+														"variable": "levelUnlock",
+														"value": "levelUnlock+1"
+													}
+												}
+											],
+											"sid": 582120136640219
+										}
+									]
+								}
+							],
+							"sid": 907656229111439
+						}
+					]
+				}
+			],
+			"sid": 323969077971102
+		}
+	],
+	"sid": 332886030828895
+}

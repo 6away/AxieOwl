@@ -1,0 +1,64 @@
+{
+	"name": "obj_shard",
+	"plugin-id": "Sprite",
+	"sid": 276547882301104,
+	"isGlobal": false,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"animations": {
+		"items": [
+			{
+				"frames": [
+					{
+						"width": 71,
+						"height": 119,
+						"originX": 0.5,
+						"originY": 1,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 8039946,
+						"collisionPoly": {
+							"points": [
+								0.30985915492957744,
+								0.18487394957983194,
+								0.5,
+								0,
+								0.676056338028169,
+								0.18487394957983194,
+								0.9859154929577465,
+								0.5,
+								0.676056338028169,
+								0.8067226890756303,
+								0.5,
+								0.9915966386554622,
+								0.30985915492957744,
+								0.8067226890756303,
+								0.014084507042253521,
+								0.5
+							]
+						},
+						"useCollisionPoly": true,
+						"imagePoints": [
+							{
+								"name": "Sparkle",
+								"x": 0.5070422535211268,
+								"y": 0.33613445378151263
+							}
+						],
+						"duration": 1
+					}
+				],
+				"sid": 515054230627855,
+				"name": "Animation 1",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			}
+		],
+		"subfolders": []
+	}
+}
